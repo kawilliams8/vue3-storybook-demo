@@ -1,14 +1,18 @@
 {
-  "files": [],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    },
-    {
-      "path": "./tsconfig.app.json"
-    },
-    {
-      "path": "./tsconfig.vitest.json"
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "strict": true,
+    "target": "ESNext",
+    "moduleResolution": "Bundler",
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "verbatimModuleSyntax": true,
+    "paths": {
+      "#core": ["./"],
+      "#core/*": ["./*"]
     }
-  ]
+  },
+  "include": ["./"],
+  "exclude": ["node_modules", "../node_modules"]
 }

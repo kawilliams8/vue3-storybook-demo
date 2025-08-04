@@ -1,0 +1,103 @@
+// colors
+$dark: #241a18;
+$primary: #033e75;
+$success: #415837;
+$info: #422a22;
+// light brown: 7e4e3f
+// medium brown 422a22
+// light green 5e8351
+// medium green 415837
+
+// fonts
+$font-size-base: 0.875rem;
+
+// nav
+$nav-link-padding-y: 0.25rem;
+
+// inputs
+$input-btn-padding-y: 0.25rem;
+$input-btn-padding-x: 0.5rem;
+
+// form
+$form-label-margin-bottom: 0.25rem;
+
+// grid
+$grid-gutter-width: 1rem;
+
+// modals
+// must match client/src/components/ModalDialog.vue
+$modal-sm: 400px !default;
+$modal-md: 800px !default;
+$modal-lg: 1200px !default;
+$modal-xl: 1600px !default;
+
+// tables
+$table-cell-padding-y-sm: 0.1rem !default;
+
+// track color
+//$up-track-color: #2b6499;
+$up-track-color: #2b6499;
+
+// live stuff
+$up-live-field-leader-color: blue;
+$up-live-field-custom-color: #ff5f15;
+$up-live-runner-attention-color: green;
+
+// put variables in root so they can be used in JS
+:root {
+  --up-live-field-leader-color: #{$up-live-field-leader-color};
+  --up-live-field-custom-color: #{$up-live-field-custom-color};
+  --up-live-runner-attention-color: #{$up-live-runner-attention-color};
+  --up-track-color: #{$up-track-color};
+}
+
+// Bootstrap and its default variables
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import '../node_modules/bootstrap-vue-next/src/styles/styles.scss';
+
+// Spacing matching bootstraps values for margin/padding
+:root {
+  --bs-spacer-0: 0;
+  --bs-spacer-1: #{$spacer * 0.25};
+  --bs-spacer-2: #{$spacer * 0.5};
+  --bs-spacer-3: #{$spacer};
+  --bs-spacer-4: #{$spacer * 1.5};
+  --bs-spacer-5: #{$spacer * 3};
+}
+
+// Add dynamic font-size classes for grid breakpoints
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @each $fs,
+    $size
+      in map-merge(
+        $font-sizes,
+        (
+          unset: unset,
+        )
+      )
+  {
+    @include media-breakpoint-up($breakpoint) {
+      .fs-#{$breakpoint}-#{$fs} {
+        font-size: $size !important;
+      }
+    }
+  }
+}
+
+// Add dynamic width classes for grid breakpoints
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+  auto: auto,
+);
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @each $size, $length in $sizes {
+    @include media-breakpoint-up($breakpoint) {
+      .w-#{$breakpoint}-#{$size} {
+        width: $length !important;
+      }
+    }
+  }
+}
