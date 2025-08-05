@@ -1,0 +1,1 @@
+.rotate-left[data-v-1f066d25]{animation:rotate-left-1f066d25 .3s}.rotate-right[data-v-1f066d25]{animation:rotate-right-1f066d25 .3s}@keyframes rotate-left-1f066d25{0%{transform:rotate(90deg)}to{transform:rotate(0)}}@keyframes rotate-right-1f066d25{0%{transform:rotate(-90deg)}to{transform:rotate(0)}}
