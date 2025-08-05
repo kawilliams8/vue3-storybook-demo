@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import Typography from '../components/Typography.vue'
+import UPTypography from '../components/UPTypography.vue'
 
-const meta: Meta<typeof Typography> = {
-  title: 'Components/Typography',
-  component: Typography,
+const meta: Meta<typeof UPTypography> = {
+  title: 'Components/UPTypography',
+  component: UPTypography,
   parameters: {
     layout: 'centered',
     docs: {

@@ -4,14 +4,14 @@ import { Icon } from '@iconify/vue'
 
 // Component name for Vue devtools
 defineOptions({
-  name: 'TypographyComponent',
+  name: 'UPTypographyComponent',
 })
 
 defineProps({
   // Text content
   title: {
     type: String,
-    default: 'Typography Example',
+    default: 'Demo Typography',
   },
   subtitle: {
     type: String,

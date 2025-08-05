@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/vue3'
-import MyButton from '../components/MyButton.vue'
+import UPButton from '../components/UPButton.vue'
 
-const meta: Meta<typeof MyButton> = {
-  title: 'Components/MyButton',
-  component: MyButton,
+const meta: Meta<typeof UPButton> = {
+  title: 'Components/UPButton',
+  component: UPButton,
   parameters: {
     layout: 'centered',
     docs: {

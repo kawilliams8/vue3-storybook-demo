@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import MyButton from './components/MyButton.vue'
+import UPButton from './components/UPButton.vue'
 </script>
 
 <template>
   <main>
-    <MyButton label="Test Button" />
+    <UPButton label="Demo Button" />
   </main>
 </template>
 
