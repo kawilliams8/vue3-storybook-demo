@@ -1,6 +1,11 @@
 <script lang="ts" setup>
 import { BButton } from 'bootstrap-vue-next'
 import { Icon } from '@iconify/vue'
+import { defineEmits, defineProps } from 'vue'
+
+const emit = defineEmits<{
+  (e: 'click', event: MouseEvent): void
+}>()
 
 defineProps({
   label: {
@@ -72,7 +77,14 @@ defineProps({
     :variant="variant as any"
     :size="size as any"
     :disabled="disabled || loading"
-    :class="[fullWidth ? 'w-100' : '', rounded ? 'rounded-pill' : '', customClass]"
+    :class="[
+      fullWidth ? 'w-100' : '',
+      rounded ? 'rounded-pill' : '',
+      customClass,
+      'd-flex align-items-center justify-content-center',
+    ]"
+    @click="emit('click', $event)"
+    style="min-width: 100px"
   >
     <span
       v-if="loading"
@@ -80,8 +92,8 @@ defineProps({
       role="status"
       aria-hidden="true"
     ></span>
-    <Icon v-else-if="icon && iconPosition === 'left'" :icon="icon" class="me-2" />
+    <Icon v-else-if="icon && iconPosition === 'left'" :icon="icon" class="me-1" />
     {{ label }}
-    <Icon v-if="icon && iconPosition === 'right'" :icon="icon" class="ms-2" />
+    <Icon v-if="icon && iconPosition === 'right'" :icon="icon" class="ms-1" />
   </BButton>
 </template>
